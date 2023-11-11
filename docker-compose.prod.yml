@@ -1,0 +1,27 @@
+version: '3'
+services:
+  ghost:
+    image: ghost:latest
+    container_name: ghost
+    volumes:
+      - ./ghost/config.production.json:/var/lib/ghost/config.production.json:z
+      - ./ghost/content:/var/lib/ghost/content:z
+    ports:
+    - "2368:2368"
+    environment:
+      - NODE_ENV=production
+    restart: always
+    links:
+      - mysql
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    volumes:
+       - ./dbdata:/var/lib/mysql:z
+    expose:
+      - "3306"
+    env_file:
+      - compose.prod.env
+    environment:
+      - MYSQL_DATABASE=ghost
+    restart: always

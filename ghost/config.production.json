@@ -1,0 +1,38 @@
+{
+    "url": "http://14mb.io",
+    "server": {
+        "port": 2368,
+        "host": "0.0.0.0"
+    },
+    "database": {
+        "client": "mysql",
+        "connection": {
+            "host": "mysql",
+            "port": 3306,
+            "database": "ghost",
+            "charset": "utf8mb4"
+        }
+    },
+    "mail": {
+        "from": "'Alexandre Moraes' <alex@14mb.io>", 
+        "transport": "SMTP",
+        "logger": true,
+        "options": {
+            "host": "pop.secureserver.net:587",
+            "secureConnection": true,
+            "auth": {
+                "user": "",
+                "pass": ""
+            }
+        }
+    },
+    "logging": {
+        "transports": [
+            "stdout"
+        ]
+    },
+    "process": "systemd",
+    "paths": {
+        "contentPath": "/var/lib/ghost/content"
+    }
+}

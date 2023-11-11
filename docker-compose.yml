@@ -1,0 +1,13 @@
+version: '3'
+services:
+  ghost:
+    image: ghost:latest
+    container_name: ghost
+    volumes:
+      - ./ghost/config.development.json:/var/lib/ghost/config.development.json:z
+      - ./ghost/content:/var/lib/ghost/content:z
+    ports:
+    - "2368:2368"
+    environment:
+      - NODE_ENV=development
+    restart: always
