@@ -8,8 +8,8 @@ services:
       - ./ghost/content:/var/lib/ghost/content:z
     ports:
     - "2368:2368"
-    environment:
-      - NODE_ENV=production
+    env_file:
+      - app.prod.env
     restart: always
     links:
       - mysql

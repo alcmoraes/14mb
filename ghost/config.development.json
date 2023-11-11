@@ -16,12 +16,11 @@
         "transport": "SMTP",
         "logger": true,
         "options": {
-            "host": "pop.secureserver.net:587",
-            "secureConnection": true,
-            "auth": {
-                "user": "",
-                "pass": ""
-            }
+            "host": "smtpout.secureserver.net",
+            "secure": false,
+            "port": 587,
+            "debug": true,
+            "auth": {}
         }
     },
     "paths": {
